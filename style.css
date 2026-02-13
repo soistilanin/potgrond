@@ -1,5 +1,3 @@
-/* style.css - FULL RECOVERY VERSION */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,138 +7,89 @@
 body {
     background-color: #fafafa;
     background-image: url("https://www.transparenttextures.com/patterns/exclusive-paper.png");
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    justify-content: flex-start; 
+    align-items: center; /* Centers the main column horizontally */
 }
 
-/* --- PAGE LAYOUT --- */
-main {
+/* --- THE MAIN SPINE (This keeps it balanced) --- */
+.page-container {
+    width: 90%;
+    max-width: 800px; /* This locks the content so it doesn't fly to the edges */
+    margin: 80px 0 300px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- LOGO COMPOSITION (The Overlap) --- */
+.logo-composition {
+    position: relative;
+    width: 320px; /* Width of the plant logo */
+    margin-bottom: 60px;
+    align-self: flex-start; /* Keeps logo on the left of our column */
+}
+
+.plant-img {
     width: 100%;
-    max-width: 800px;
-    padding: 0 20px 400px 20px; /* Big padding so text can hide behind buttons */
-    text-align: center;
+    height: auto;
+    display: block;
+    filter: contrast(1.1);
 }
 
-h1 {
-    margin-top: 20px;
-    font-size: 4rem;
-    font-weight: normal;
-    letter-spacing: 0.2em;
-    margin-bottom: 10px;
-    font-family: "jetsam-collection-basilea", sans-serif;
-    color: #ed1c24;
+.site-title {
+    position: absolute;
+    
+    /* These coordinates force the overlap from your first reference */
+    top: 10%; 
+    left: 65%; 
+    
+    font-family: "eroika-slab", sans-serif;
+    font-size: 3rem; /* Big and bold */
+    font-weight: 700;
+    text-transform: lowercase;
+    color: #000;
+    mix-blend-mode: multiply; /* Blends text into the plant ink */
+    line-height: 0.8;
 }
 
-h2 { 
-    font-family: "bookman-jf-pro", serif;
+/* --- THE NARRATIVE (Shifted Right for Balance) --- */
+.narrative-block {
+    align-self: flex-end; /* Pushes the block to the right side of our 800px column */
+    max-width: 500px;
+    text-align: right;
+}
+
+.narrative-block p {
+    font-family: "helvetica-neue-lt-pro", sans-serif;
     font-weight: 400;
-    font-style: normal; }
-
-main h3:first-child {
-    margin-top: 60px; /* Adjust this to the gap you want at the top of articles */
-    margin-bottom: 20px; 
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.2;
+    color: #444;
+    margin-bottom: 1.5rem;
 }
 
-h3 {
-    font-size: 0.8rem;
-    font-family: "ocr-a", monospace; 
-    letter-spacing: 0.15em;
-    color: #f54949;
-}
-
-p {
-    font-family: "ltc-kennerley", serif;
-font-weight: 400;
-font-style: normal;
-
-    font-size: 1.2rem;
-    color: #544141;
-    line-height: 1.25;
-    max-width: 600px;
-    margin: 30px auto;
-}
-
-/* --- THE NAVIGATION (RESTORED TO ORIGINAL) --- */
+/* --- FIXED NAVIGATION --- */
 .bottom-container {
     position: fixed;
     bottom: 0;
-    left: 0;
     width: 100%;
     padding: 40px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    background: linear-gradient(to top, #fafafa 60%, rgba(250,250,250,0));
     z-index: 1000;
 }
 
-/* THE FADE EFFECT: This creates a fade WITHOUT a second paper texture */
-/* By using the same color as the paper (#fafafa), it looks seamless */
-.bottom-container::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 300px; /* How far up the screen the fade reaches */
-    background: linear-gradient(to top, 
-        rgba(250, 250, 250, 1) 0%, 
-        rgba(250, 250, 250, 1) 30%, 
-        rgba(250, 250, 250, 0) 100%);
-    z-index: -1; /* Puts the fade BEHIND your buttons */
-    pointer-events: none;
-}
-
-nav {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-img-btn {
-    width: 150px;
-    transition: transform 0.3s ease;
-}
-
-.nav-img-btn img {
-    width: 100%;
-    height: auto;
-}
-
-.nav-img-btn:hover {
-    transform: scale(1.1) translateY(-5px);
-}
-
-/* Hide the active image by default */
-.nav-img-btn .img-active {
-    display: none;
-}
-
-/* When hovering: Hide default, Show active */
-.nav-img-btn:hover .img-default {
-    display: none;
-}
-
-.nav-img-btn:hover .img-active {
-    display: block;
-}
-
-/* --- OPTIONAL: PERSISTENT ACTIVE STATE --- */
-/* If you add class="active" to the link of the current page */
-.nav-img-btn.active .img-default {
-    display: none;
-}
-
-.nav-img-btn.active .img-active {
-    display: block;
-}
-
-/* Keep your existing hover scale effect */
-.nav-img-btn:hover {
-    transform: scale(1.1) translateY(-5px);
-}
+nav { display: flex; gap: 30px; }
+.nav-img-btn { width: 150px; transition: transform 0.3s ease; }
+.nav-img-btn img { width: 100%; height: auto; }
+.nav-img-btn:hover { transform: scale(1.1) translateY(-5px); }
+.nav-img-btn .img-active { display: none; }
+.nav-img-btn:hover .img-default { display: none; }
+.nav-img-btn:hover .img-active { display: block; }
 
 footer {
     font-family: Arial, sans-serif;
@@ -148,45 +97,5 @@ footer {
     color: #999;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-}
-
-/* --- BLOG STYLING --- */
-.blog-feed {
-    margin-top: 40px;
-    text-align: left;
-    max-width: 700px;
-    margin: 60px auto;
-    padding-left: 25px; 
-}
-
-.blog-post {
-    margin-bottom: 80px;
-    border-left: 3px solid #ed1c24;
-   padding-left: 25px; 
-}
-
-.post-meta {
-    font-size: 0.8rem;
-    font-family: "ocr-a", monospace;
-    letter-spacing: 0.15em;
-    color: #f54949;
-    margin-bottom: 20px;
-}
-
-.blog-post h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    letter-spacing: 0.05em;
-    color: #ed1c24;
-}
-.blog-post p {
-    margin-top: 0px !important; /* Forces the gap above the text to disappear */
-    margin-bottom: 15px;        /* Keeps a small gap before the "Read More" link */
-}
-.read-more {
-    font-family: "ocr-a", monospace;
-    
-    color: #ed1c24;
-    
-    font-size: 0.9rem;
+    margin-top: 15px;
 }
