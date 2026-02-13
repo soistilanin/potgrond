@@ -1,0 +1,192 @@
+/* style.css - FULL RECOVERY VERSION */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fafafa;
+    background-image: url("https://www.transparenttextures.com/patterns/exclusive-paper.png");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: flex-start; 
+}
+
+/* --- PAGE LAYOUT --- */
+main {
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px 400px 20px; /* Big padding so text can hide behind buttons */
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 4rem;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+    font-family: "jetsam-collection-basilea", sans-serif;
+    color: #ed1c24;
+}
+
+h2 { 
+    font-family: "bookman-jf-pro", serif;
+    font-weight: 400;
+    font-style: normal; }
+
+main h3:first-child {
+    margin-top: 60px; /* Adjust this to the gap you want at the top of articles */
+    margin-bottom: 20px; 
+}
+
+h3 {
+    font-size: 0.8rem;
+    font-family: "ocr-a", monospace; 
+    letter-spacing: 0.15em;
+    color: #f54949;
+}
+
+p {
+    font-family: "ltc-kennerley", serif;
+font-weight: 400;
+font-style: normal;
+
+    font-size: 1.2rem;
+    color: #544141;
+    line-height: 1.25;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+/* --- THE NAVIGATION (RESTORED TO ORIGINAL) --- */
+.bottom-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 1000;
+}
+
+/* THE FADE EFFECT: This creates a fade WITHOUT a second paper texture */
+/* By using the same color as the paper (#fafafa), it looks seamless */
+.bottom-container::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px; /* How far up the screen the fade reaches */
+    background: linear-gradient(to top, 
+        rgba(250, 250, 250, 1) 0%, 
+        rgba(250, 250, 250, 1) 30%, 
+        rgba(250, 250, 250, 0) 100%);
+    z-index: -1; /* Puts the fade BEHIND your buttons */
+    pointer-events: none;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-img-btn {
+    width: 150px;
+    transition: transform 0.3s ease;
+}
+
+.nav-img-btn img {
+    width: 100%;
+    height: auto;
+}
+
+.nav-img-btn:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+
+/* Hide the active image by default */
+.nav-img-btn .img-active {
+    display: none;
+}
+
+/* When hovering: Hide default, Show active */
+.nav-img-btn:hover .img-default {
+    display: none;
+}
+
+.nav-img-btn:hover .img-active {
+    display: block;
+}
+
+/* --- OPTIONAL: PERSISTENT ACTIVE STATE --- */
+/* If you add class="active" to the link of the current page */
+.nav-img-btn.active .img-default {
+    display: none;
+}
+
+.nav-img-btn.active .img-active {
+    display: block;
+}
+
+/* Keep your existing hover scale effect */
+.nav-img-btn:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+
+footer {
+    font-family: Arial, sans-serif;
+    font-size: 0.7rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* --- BLOG STYLING --- */
+.blog-feed {
+    margin-top: 40px;
+    text-align: left;
+    max-width: 700px;
+    margin: 60px auto;
+    padding-left: 25px; 
+}
+
+.blog-post {
+    margin-bottom: 80px;
+    border-left: 3px solid #ed1c24;
+   padding-left: 25px; 
+}
+
+.post-meta {
+    font-size: 0.8rem;
+    font-family: "ocr-a", monospace;
+    letter-spacing: 0.15em;
+    color: #f54949;
+    margin-bottom: 20px;
+}
+
+.blog-post h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+    color: #ed1c24;
+}
+.blog-post p {
+    margin-top: 0px !important; /* Forces the gap above the text to disappear */
+    margin-bottom: 15px;        /* Keeps a small gap before the "Read More" link */
+}
+.read-more {
+    font-family: "ocr-a", monospace;
+    
+    color: #ed1c24;
+    
+    font-size: 0.9rem;
+}
