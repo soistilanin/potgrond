@@ -117,7 +117,7 @@ footer {
         /* Adjusting the overlap so it doesn't bleed off screen */
         top: 10%; 
         left: 64%; 
-        font-size: 1rem;
+        font-size: 1.1rem;
         transform: translateX(-20%); /* Fine-tunes the overlap without breaking width */
     }
 
