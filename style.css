@@ -108,14 +108,14 @@ footer {
     }
 
     .logo-composition {
-        width: 240px; /* Slightly smaller logo for mobile */
+        width: 230px; /* Slightly smaller logo for mobile */
         margin-bottom: 40px;
         align-self: center; /* Center the logo instead of flex-start */
     }
 
     .site-title {
         /* Adjusting the overlap so it doesn't bleed off screen */
-        top: 14%; 
+        top: 13%; 
         left: 64%; 
         font-size: 1.3rem;
         transform: translateX(-20%); /* Fine-tunes the overlap without breaking width */
