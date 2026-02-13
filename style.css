@@ -103,7 +103,7 @@ footer {
 @media (max-width: 768px) {
     .page-container {
         width: 95%;
-        margin: 40px auto 200px auto; /* Reduced top margin, centered container */
+        margin: 30px auto 200px auto; /* Reduced top margin, centered container */
         align-items: center; /* Centers everything in the column */
     }
 
