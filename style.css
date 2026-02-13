@@ -108,7 +108,7 @@ footer {
     }
 
     .logo-composition {
-        width: 250px; /* Slightly smaller logo for mobile */
+        width: 240px; /* Slightly smaller logo for mobile */
         margin-bottom: 40px;
         align-self: center; /* Center the logo instead of flex-start */
     }
