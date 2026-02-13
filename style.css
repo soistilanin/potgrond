@@ -99,3 +99,32 @@ footer {
     letter-spacing: 0.1em;
     margin-top: 15px;
 }
+
+@media (max-width: 768px) {
+    .page-container {
+        width: 95%;
+        margin: 40px auto 200px auto; /* Reduced top margin, centered container */
+        align-items: center; /* Centers everything in the column */
+    }
+
+    .logo-composition {
+        width: 260px; /* Slightly smaller logo for mobile */
+        margin-bottom: 40px;
+        align-self: center; /* Center the logo instead of flex-start */
+    }
+
+    .site-title {
+        /* Adjusting the overlap so it doesn't bleed off screen */
+        top: 15%; 
+        left: 50%; 
+        font-size: 2.2rem;
+        transform: translateX(-20%); /* Fine-tunes the overlap without breaking width */
+    }
+
+    .narrative-block {
+        align-self: center; /* Center the text block */
+        max-width: 100%;
+        text-align: center; /* Center-aligned text is usually easier on mobile */
+        padding: 0 10px;
+    }
+}
