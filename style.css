@@ -124,7 +124,7 @@ footer {
     .narrative-block {
         align-self: center; /* Center the text block */
         max-width: 100%;
-        text-align: center; /* Center-aligned text is usually easier on mobile */
+        text-align: justify; /* Center-aligned text is usually easier on mobile */
         padding: 0 10px;
     }
 }
