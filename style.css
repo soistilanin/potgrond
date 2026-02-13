@@ -115,7 +115,7 @@ footer {
 
     .site-title {
         /* Adjusting the overlap so it doesn't bleed off screen */
-        top: 15%; 
+        top: 10%; 
         left: 60%; 
         font-size: 1.2rem;
         transform: translateX(-20%); /* Fine-tunes the overlap without breaking width */
